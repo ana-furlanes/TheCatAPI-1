@@ -1,45 +1,38 @@
 # TheCatAPI
 
 >
-> The Cat API é uma API pública de **gerenciamento de informações** e **imagens de gatos**, para deixar o dia mais alegre 🐈.
+> The Cat API é uma API pública de **gerenciamento de informações** e **imagens de gatos**, para deixar o dia mais alegre. 🐈
 
 Com a The Cat API, é possível: 
 
-1. **Inserir** imagens;
+1. **Gerar** imagens;
 2. **Buscar** imagens por ID;
 3. **Excluir** imagens.
 
-⚠️ _Imagens que não contiverem gatos ou forem inapropriadas são rejeitadas_. O objeto `images` representa as fotos de gatos enviadas.
+⚠️ _Imagens que não forem de gatos ou inapropriadas são rejeitadas_. O objeto `images` representa as fotos de gatos enviadas.
 
 ## Pré-requisitos
 
-- É imprescindível fazer o registro em [https://thecatapi.com/signup](https://thecatapi.com/signup) para receber sua API key por email.
+- Faça o registro em [https://thecatapi.com/signup](https://thecatapi.com/signup) para receber sua API key por email.
 - Informe a API key no header das chamadas através da variável `x-api-key`.
 - Utilize nas chamadas o path [https://api.thecatapi.com/v1](https://api.thecatapi.com/v1).
 
+## Endpoints
 
-## Images
+>
+> Confira abaixo cada endpoint, suas formas de requisição e exemplos de _response body_. 🐾
 
-O objeto `images` representa as fotos de gatos enviadas. Imagens que não contiverem gatos ou forem inapropriadas são rejeitadas.
 
-| Nome | Descrição | Tipo | Obrigatório |
-|------|-----------|------|-------------|
-| `id` | ID da imagem. | `UUID` | Sim |
-| `url` | URL para acessar a imagem. | `string` | Sim |
-| `width` | Largura da imagem em pixels. Automaticamente gerada. | `integer` | Sim |
-| `height` | Altura da imagem em pixels. Automaticamente gerada. | `integer` | Sim |
-| `sub_id` | ID para identificação interna. | `string` | Não |
-| `created_at` | Data de upload da imagem no formato *2022-11-24T17:41:35.000Z* | `datetime` | Sim | 
-| `original_filename` | Nome do arquivo original. | `string` | Sim | 
-| `pending` | Flag interna de ciclo de vida. 0=falso, 1=verdadeiro | `integer` | Não | 
-| `approved` | Flag interna de ciclo de vida. 0=falso, 1=verdadeiro | `integer` | Não | 
-| `breed_ids` | **Não implementado.** | N/A | Não | 
+**`POST / Images / Upload`**
 
-### POST
+Este endpoint **insere** uma nova imagem no sistema carregando um arquivo **válido** de imagem de gato, do tipo:
 
-**Endpoint:** `POST /images/upload`
+- .gif;
+- .jpg;
+- .png.
 
-Cria uma nova imagem no sistema carregando um arquivo .gif, .jpg, ou .png válido contendo um gato.
+⚠️ O **file** é um _body param_ imprescindível. 
+
 
 **Request body**
 
