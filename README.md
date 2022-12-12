@@ -1,21 +1,22 @@
 # TheCatAPI
 
 >
-> The Cat API é uma API pública de **gerenciamento de informações** e **imagens de gatos**, os mais fofos e amáveis do planeta 🐈.
+> The Cat API é uma API pública de **gerenciamento de informações** e **imagens de gatos**, para deixar o dia mais alegre 🐈.
 
 Com a The Cat API, é possível: 
 
 1. **Inserir** imagens;
-2. **Buscar** imagens;
+2. **Buscar** imagens por ID;
 3. **Excluir** imagens.
 
+⚠️ _Imagens que não contiverem gatos ou forem inapropriadas são rejeitadas_. O objeto `images` representa as fotos de gatos enviadas.
 
 ## Pré-requisitos
 
-- Registre-se em [https://thecatapi.com/signup](https://thecatapi.com/signup) para receber sua API key por email.
-- A API key deve ser informada no header das chamadas através da variável `x-api-key`.
-- O path a ser utilizado nas chamadas é o [https://api.thecatapi.com/v1](https://api.thecatapi.com/v1).
-- A API em funcionamento pode ser observada através da [coleção do Postman](https://www.postman.com/winter-shuttle-98074/workspace/thecatapi/collection/22116190-45a163ae-36c7-4fbc-add6-eae0011333c5?action=share&creator=22116190).
+- É imprescindível fazer o registro em [https://thecatapi.com/signup](https://thecatapi.com/signup) para receber sua API key por email.
+- Informe a API key no header das chamadas através da variável `x-api-key`.
+- Utilize nas chamadas o path [https://api.thecatapi.com/v1](https://api.thecatapi.com/v1).
+
 
 ## Images
 
