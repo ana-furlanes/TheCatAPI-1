@@ -1,13 +1,16 @@
 # TheCatAPI
 
 >
-> The Cat API é uma API pública de gerenciamento de informações e imagens de gatos que usaremos de exemplo para a oficina do nosso curso **Decolando em TW**.
+> The Cat API é uma API pública de **gerenciamento de informações** e **imagens de gatos**, os mais fofos e amáveis do planeta 🐈.
 
-> A ideia é que, neste exercício, você escreva documentacões que descrevam como funcionam os enpoints relacionados ao recurso Images do The Cat API.
+Com a The Cat API, é possível: 
+
+1. **Inserir** imagens;
+2. **Buscar** imagens;
+3. **Excluir** imagens.
 
 
-
-## Informações gerais
+## Pré-requisitos
 
 - Registre-se em [https://thecatapi.com/signup](https://thecatapi.com/signup) para receber sua API key por email.
 - A API key deve ser informada no header das chamadas através da variável `x-api-key`.
