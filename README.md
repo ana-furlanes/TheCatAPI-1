@@ -1,4 +1,4 @@
-# TheCatAPI
+# TheCatAPI-DOC
 
 >
 > The Cat API é uma API pública de **gerenciamento de informações** e **imagens de gatos**, para deixar o dia mais alegre. 🐈
