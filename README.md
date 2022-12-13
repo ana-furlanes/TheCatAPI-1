@@ -23,15 +23,15 @@ Com a The Cat API, é possível:
 > Confira abaixo cada endpoint, suas formas de requisição e exemplos de _response body_. 🐾
 
 
-**`POST / Images / Upload`**
+**`POST / Images / Upload`** `https://api.thecatapi.com/v1/images/upload`
 
 Este endpoint **insere** uma nova imagem no sistema carregando um arquivo **válido** de imagem de gato, do tipo:
 
-- .gif;
-- .jpg;
-- .png.
+- .gif
+- .jpg
+- .png
 
-⚠️ O **file** é um _body param_ imprescindível. 
+⚠️ O **file** é um _body param_ obrigatório. 
 
 
 **Request body**
@@ -40,6 +40,28 @@ Este endpoint **insere** uma nova imagem no sistema carregando um arquivo **vál
 |------|-----------|------|-------------|
 | `file` | Arquivo em .gif, .png, ou .jpg | `file` | Sim |
 | `sub_id` | ID para identificação interna. | `string` | Não |
+
+**Exemplo de requisição:** 
+
+```
+curl --location --request POST 'https://api.thecatapi.com/v1/images/upload' \
+--header 'x-api-key: live_g6EUZSGbkMsKSuQm1OyWDVeLrLSnoCMcps2f7BMcDq6Alt2Y9Z606aj1uF6sPF35' \
+--form 'file=@"iQzJdW8Ds/Mia.jpg"'
+```
+
+**Exemplo de _response body_:**
+
+``` json
+{
+    "id": "RyOzgrhxk",    
+    "url": "https://cdn2.thecatapi.com/images/RyOzgrhxk.jpg",   
+    "width": 1047,    
+    "height": 647,    
+    "original_filename": "Mia.jpg",    
+    "pending": 0,    
+    "approved": 1  
+}
+```
 
 ### GET by ID
 
