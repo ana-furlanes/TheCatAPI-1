@@ -49,6 +49,10 @@ curl --location --request POST 'https://api.thecatapi.com/v1/images/upload' \
 --form 'file=@"iQzJdW8Ds/Mia.jpg"'
 ```
 
+![Mia](https://user-images.githubusercontent.com/105396649/207432035-c638a387-f243-4983-8af5-fcf7e0c94011.jpg)
+
+😻 A resposta de código `201 Created` indica que o arquivo da imagem foi criado com sucesso. Retorna um JSON com as informações, incluindo o novo ID.
+
 **Exemplo de _response body_:**
 
 ``` json
