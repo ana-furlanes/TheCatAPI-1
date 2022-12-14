@@ -7,7 +7,7 @@ Com a The Cat API, é possível:
 
 1. **Gerar** imagens;
 2. **Buscar** imagens por ID;
-3. **Excluir** imagens.
+3. **Deletar** imagens.
 
 ⚠️ _Imagens que não forem de gatos ou inapropriadas são rejeitadas_. O objeto `images` representa as fotos de gatos enviadas.
 
@@ -22,6 +22,7 @@ Com a The Cat API, é possível:
 >
 > Confira abaixo cada endpoint, suas formas de requisição e exemplos de _response body_. 
 
+### POST
 
 🐱 **`POST / Images / Upload`** `https://api.thecatapi.com/v1/images/upload`
 
@@ -110,11 +111,13 @@ curl --location --request GET 'https://api.thecatapi.com/v1/images/6qmirugX0' \
 
 ```
 
-### GET
+### GET your uploaded images 
 
-**Endpoint:** `GET /images`
+🐱 **`GET /images`** `https://api.thecatapi.com/v1/images`
 
-Obtenha todas as imagens enviadas para sua conta via `/images/upload`. Os resultados podem ser filtrados através dos parâmteros `query` abaixo:
+Este endpoint **busca** todas as imagens enviadas para sua conta via `/images/upload`.
+
+Filtre os resultados através dos parâmetros `query` abaixo:
 
 | Parâmetro |    Descrição      | Tipo | Obrigatório |
 |------------|--------------------|------|------------|
@@ -122,8 +125,57 @@ Obtenha todas as imagens enviadas para sua conta via `/images/upload`. Os result
 | `mime_types` | Os tipos de imagem a serem retornados: .gif, .jpg, ou .png. Retorna todos os tipos como padrão. | `string` delimitado por vírgulas. | Não |
 | `order` | A ordem de retorno: RANDOM, ASC ou DESC. O padrão é RANDOM. | `string` | Não  |
 
-### DELETE
+**Exemplo de _requisição_ com parâmetros `limit` 25 e `order` ASC:**
 
-**Endpoint:** `DELETE /images/{image_id}`
+``` 
+curl --location --request GET 'https://api.thecatapi.com/v1/images?limit=25&order=ASC' \
+--header 'x-api-key: live_g6EUZSGbkMsKSuQm1OyWDVeLrLSnoCMcps2f7BMcDq6Alt2Y9Z606aj1uF6sPF35'
+```
 
-Exclui a imagem correspondente ao parâmetro `image_id` passado como parâmetro `path`.
+**Exemplo de _response body_:**
+
+``` json
+[
+    {
+        "breeds": [],
+        "id": "RyOzgrhxk",
+        "url": "https://cdn2.thecatapi.com/images/RyOzgrhxk.jpg",
+        "width": 1047,
+        "height": 647,
+        "sub_id": null,
+        "created_at": "2022-12-13T16:43:59.000Z",
+        "original_filename": "Mia.jpg",
+        "breed_ids": null
+    },
+    {
+        "breeds": [],
+        "id": "6qmirugX0",
+        "url": "https://cdn2.thecatapi.com/images/6qmirugX0.jpg",
+        "width": 1047,
+        "height": 647,
+        "sub_id": null,
+        "created_at": "2022-12-14T13:13:49.000Z",
+        "original_filename": "081E825A-1D2D-49C4-A659-818CC053E421.jpeg",
+        "breed_ids": null
+    }
+]
+
+```
+
+### DELETE a specific image 
+
+🐱 DELETE /images/{image_id}` https://api.thecatapi.com/v1/images/{{image_id}}
+
+Este endpoint **deleta** a imagem correspondente ao parâmetro `image_id` passado como parâmetro `path`.
+
+**Exemplo de _requisição_:**
+
+``` 
+curl --location --request DELETE 'https://api.thecatapi.com/v1/images/FBqMvFgx5' \
+--header 'x-api-key: live_g6EUZSGbkMsKSuQm1OyWDVeLrLSnoCMcps2f7BMcDq6Alt2Y9Z606aj1uF6sPF35'
+``` 
+
+![Mia 3](https://user-images.githubusercontent.com/105396649/207685891-74ba01fd-4ff1-4953-a095-41d839b3c02c.jpg)
+
+
+😻 A resposta de código `204 No Content` indica que a exclusão foi executada com sucesso. Ela retorna um JSON vazio.
