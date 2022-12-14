@@ -20,10 +20,10 @@ Com a The Cat API, é possível:
 ## Endpoints
 
 >
-> Confira abaixo cada endpoint, suas formas de requisição e exemplos de _response body_. 🐾
+> Confira abaixo cada endpoint, suas formas de requisição e exemplos de _response body_. 
 
 
-**`POST / Images / Upload`** `https://api.thecatapi.com/v1/images/upload`
+🐱 **`POST / Images / Upload`** `https://api.thecatapi.com/v1/images/upload`
 
 Este endpoint **insere** uma nova imagem no sistema carregando um arquivo **válido** de imagem de gato, do tipo:
 
@@ -31,15 +31,13 @@ Este endpoint **insere** uma nova imagem no sistema carregando um arquivo **vál
 - .jpg
 - .png
 
-⚠️ O **file** é um _body param_ obrigatório. 
-
-
 **Request body**
 
 | Nome | Descrição | Tipo | Obrigatório |
 |------|-----------|------|-------------|
 | `file` | Arquivo em .gif, .png, ou .jpg | `file` | Sim |
 | `sub_id` | ID para identificação interna. | `string` | Não |
+
 
 **Exemplo de requisição:** 
 
@@ -51,9 +49,9 @@ curl --location --request POST 'https://api.thecatapi.com/v1/images/upload' \
 
 ![Mia](https://user-images.githubusercontent.com/105396649/207432035-c638a387-f243-4983-8af5-fcf7e0c94011.jpg)
 
-😻 A resposta de código `201 Created` indica que o arquivo da imagem foi criado com sucesso. Retorna um JSON com as informações, incluindo o novo ID.
+😻 A resposta de código `201 Created` indica que o registro da imagem foi criado com sucesso. Retorna um JSON com as informações, incluindo o novo ID.
 
-**Exemplo de _response body_:**
+**Exemplo positivo de _response body_:**
 
 ``` json
 {
@@ -67,11 +65,50 @@ curl --location --request POST 'https://api.thecatapi.com/v1/images/upload' \
 }
 ```
 
+**Exemplos negativos de _response body_:**
+
+-  `400 Bad request` Invalid file data. Check you are sending the formdata.append('file', ...} format'
+> Response type: application/JSON
+
+-  `400 Bad request` Classifcation failed: correct animal found. 
+> Response type: application/JSON
+
+-  `401 Unauthorized` Unauthorized
+> Response type: application/text
+
+-  `500 Internal Server Error` Internal Server Error. 
+> Response type: application/text
+
 ### GET by ID
 
-**Endpoint:** `GET /images/{image_id}`
+🐱 **`GET /images/{image_id}`** `https://api.thecatapi.com/v1/images/{{image_id}}`
 
-Obtém a imagem correspondente ao parâmetro `image_id` passado como parâmetro `path`.
+Este endpoint **busca** a imagem correspondente ao **_path param_** `image_id`.
+
+**Exemplo de requisição:** 
+
+```
+curl --location --request GET 'https://api.thecatapi.com/v1/images/6qmirugX0' \
+--header 'x-api-key: live_g6EUZSGbkMsKSuQm1OyWDVeLrLSnoCMcps2f7BMcDq6Alt2Y9Z606aj1uF6sPF35'
+```
+
+![Mia2](https://user-images.githubusercontent.com/105396649/207641262-48edba35-f423-4835-84ce-7f9109237485.jpg)
+
+😻 A resposta de código `200 OK` indica que a consulta foi executada com sucesso. Ela retorna um JSON com todas as informações da imagem.
+
+**Exemplo positivo de _response body_:**
+
+``` json
+
+{
+    "id": "6qmirugX0",
+    "url": "https://cdn2.thecatapi.com/images/6qmirugX0.jpg",
+    "width": 1047,
+    "height": 647,
+    "sub_id": null
+}
+
+```
 
 ### GET
 
