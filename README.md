@@ -164,7 +164,7 @@ curl --location --request GET 'https://api.thecatapi.com/v1/images?limit=25&orde
 
 ### DELETE a specific image 
 
-🐱 DELETE /images/{image_id}` https://api.thecatapi.com/v1/images/{{image_id}}
+🐱 **`DELETE /images/{image_id}`** `https://api.thecatapi.com/v1/images/{{image_id}}`
 
 Este endpoint **deleta** a imagem correspondente ao parâmetro `image_id` passado como parâmetro `path`.
 
