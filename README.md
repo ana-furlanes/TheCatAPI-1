@@ -52,7 +52,7 @@ curl --location --request POST 'https://api.thecatapi.com/v1/images/upload' \
 
 😻 A resposta de código `201 Created` indica que o registro da imagem foi criado com sucesso. Retorna um JSON com as informações, incluindo o novo ID.
 
-**Exemplo de resposta positiva**
+**Exemplo de _response body_:**
 
 ``` json
 {
@@ -66,7 +66,7 @@ curl --location --request POST 'https://api.thecatapi.com/v1/images/upload' \
 }
 ```
 
-**Exemplos de respostas negativas****
+**Exemplos de respostas negativas:**
 
 -  `400 Bad request` Invalid file data. Check you are sending the formdata.append('file', ...} format'.
 
@@ -93,7 +93,7 @@ curl --location --request GET 'https://api.thecatapi.com/v1/images/6qmirugX0' \
 
 😻 A resposta de código `200 OK` indica que a consulta foi executada com sucesso. Ela retorna um JSON com todas as informações da imagem.
 
-**Exemplo de resposta positiva**
+**Exemplo de _reponse body_:**
 
 ``` json
 
@@ -132,7 +132,7 @@ curl --location --request GET 'https://api.thecatapi.com/v1/images?limit=25&orde
 --header 'x-api-key: live_g6EUZSGbkMsKSuQm1OyWDVeLrLSnoCMcps2f7BMcDq6Alt2Y9Z606aj1uF6sPF35'
 ```
 
-**Exemplo de resposta positiva:**
+**Exemplo de _response body_:**
 
 ``` json
 [
