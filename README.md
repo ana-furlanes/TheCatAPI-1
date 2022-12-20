@@ -68,17 +68,13 @@ curl --location --request POST 'https://api.thecatapi.com/v1/images/upload' \
 
 **Exemplos negativos de _response body_:**
 
--  `400 Bad request` Invalid file data. Check you are sending the formdata.append('file', ...} format'
-> Response type: application/JSON
+-  `400 Bad request` Invalid file data. Check you are sending the formdata.append('file', ...} format'.
 
--  `400 Bad request` Classifcation failed: correct animal found. 
-> Response type: application/JSON
+-  `400 Bad request` Classifcation failed: correct animal found.
 
--  `401 Unauthorized` Unauthorized
-> Response type: application/text
+-  `401 Unauthorized` Unauthorized.
 
 -  `500 Internal Server Error` Internal Server Error. 
-> Response type: application/text
 
 ### GET by ID
 
@@ -110,6 +106,10 @@ curl --location --request GET 'https://api.thecatapi.com/v1/images/6qmirugX0' \
 }
 
 ```
+
+**Exemplo negativo de _response body_:**
+
+-  `400 Bad request`Couldn't find an image matching the passed 'id' of xxxxx. Caso o `image_id` inserido estivesse incorreto. 
 
 ### GET your uploaded images 
 
@@ -179,3 +179,8 @@ curl --location --request DELETE 'https://api.thecatapi.com/v1/images/FBqMvFgx5'
 
 
 😻 A resposta de código `204 No Content` indica que a exclusão foi executada com sucesso. Ela retorna um JSON vazio.
+
+
+**Exemplo negativo de _response body_:**
+
+-  `400 Bad request` INVALID_DATA. Caso o `image_id` esteja inserido incorretamente.
