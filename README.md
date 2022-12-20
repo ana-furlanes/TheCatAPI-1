@@ -1,4 +1,4 @@
-# TheCatAPI-DOC
+# The-Cat-API-DOC
 
 >
 > The Cat API é uma API pública de **gerenciamento de informações** e **imagens de gatos**, para deixar o dia mais alegre. 🐈
@@ -52,7 +52,7 @@ curl --location --request POST 'https://api.thecatapi.com/v1/images/upload' \
 
 😻 A resposta de código `201 Created` indica que o registro da imagem foi criado com sucesso. Retorna um JSON com as informações, incluindo o novo ID.
 
-**Exemplo positivo de _response body_:**
+**Exemplo de resposta positiva**
 
 ``` json
 {
@@ -66,7 +66,7 @@ curl --location --request POST 'https://api.thecatapi.com/v1/images/upload' \
 }
 ```
 
-**Exemplos negativos de _response body_:**
+**Exemplos de respostas negativas****
 
 -  `400 Bad request` Invalid file data. Check you are sending the formdata.append('file', ...} format'.
 
@@ -93,7 +93,7 @@ curl --location --request GET 'https://api.thecatapi.com/v1/images/6qmirugX0' \
 
 😻 A resposta de código `200 OK` indica que a consulta foi executada com sucesso. Ela retorna um JSON com todas as informações da imagem.
 
-**Exemplo positivo de _response body_:**
+**Exemplo de resposta positiva**
 
 ``` json
 
@@ -107,7 +107,7 @@ curl --location --request GET 'https://api.thecatapi.com/v1/images/6qmirugX0' \
 
 ```
 
-**Exemplo negativo de _response body_:**
+**Exemplo de resposta negativa:**
 
 -  `400 Bad request`Couldn't find an image matching the passed 'id' of xxxxx. Caso o `image_id` inserido estivesse incorreto. 
 
@@ -132,7 +132,7 @@ curl --location --request GET 'https://api.thecatapi.com/v1/images?limit=25&orde
 --header 'x-api-key: live_g6EUZSGbkMsKSuQm1OyWDVeLrLSnoCMcps2f7BMcDq6Alt2Y9Z606aj1uF6sPF35'
 ```
 
-**Exemplo de _response body_:**
+**Exemplo de resposta positiva:**
 
 ``` json
 [
@@ -181,6 +181,6 @@ curl --location --request DELETE 'https://api.thecatapi.com/v1/images/FBqMvFgx5'
 😻 A resposta de código `204 No Content` indica que a exclusão foi executada com sucesso. Ela retorna um JSON vazio.
 
 
-**Exemplo negativo de _response body_:**
+**Exemplo de resposta negativa:**
 
 -  `400 Bad request` INVALID_DATA. Caso o `image_id` esteja inserido incorretamente.
