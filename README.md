@@ -20,7 +20,7 @@ Com a The Cat API, é possível:
 ## Endpoints
 
 >
-> Confira abaixo cada endpoint, suas formas de requisição e exemplos de _response body_. 
+> Confira abaixo cada endpoint, suas formas de requisição e exemplos de _respostas_. 
 
 ### POST
 
