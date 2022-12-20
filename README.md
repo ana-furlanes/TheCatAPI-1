@@ -5,7 +5,7 @@
 
 Com a The Cat API, é possível: 
 
-1. **Gerar** imagens;
+1. **Inserir** imagens;
 2. **Buscar** imagens por ID;
 3. **Deletar** imagens.
 
