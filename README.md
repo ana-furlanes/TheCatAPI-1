@@ -50,7 +50,7 @@ curl --location --request POST 'https://api.thecatapi.com/v1/images/upload' \
 
 ![Mia](https://user-images.githubusercontent.com/105396649/207432035-c638a387-f243-4983-8af5-fcf7e0c94011.jpg)
 
-😻 A resposta de código `201 Created` indica que o registro da imagem foi criado com sucesso. Retorna um JSON com as informações, incluindo o novo ID.
+😻 A resposta de código `201 Created` indica que o registro da imagem foi criado com sucesso. Retorna um JSON incluindo o novo ID.
 
 **Exemplo de _response body_:**
 
@@ -66,7 +66,7 @@ curl --location --request POST 'https://api.thecatapi.com/v1/images/upload' \
 }
 ```
 
-**Exemplos de respostas negativas:**
+**Exemplos erros de respostas:**
 
 -  `400 Bad request` Invalid file data. Check you are sending the formdata.append('file', ...} format'.
 
@@ -107,7 +107,7 @@ curl --location --request GET 'https://api.thecatapi.com/v1/images/6qmirugX0' \
 
 ```
 
-**Exemplo de resposta negativa:**
+**Exemplo erro de resposta:**
 
 -  `400 Bad request`Couldn't find an image matching the passed 'id' of xxxxx. Caso o `image_id` inserido estivesse incorreto. 
 
@@ -181,6 +181,6 @@ curl --location --request DELETE 'https://api.thecatapi.com/v1/images/FBqMvFgx5'
 😻 A resposta de código `204 No Content` indica que a exclusão foi executada com sucesso. Ela retorna um JSON vazio.
 
 
-**Exemplo de resposta negativa:**
+**Exemplo erro de resposta:**
 
 -  `400 Bad request` INVALID_DATA. Caso o `image_id` esteja inserido incorretamente.
