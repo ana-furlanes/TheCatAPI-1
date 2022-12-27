@@ -11,18 +11,18 @@ Com a The Cat API, é possível:
 
 ⚠️ _Imagens que não forem de gatos ou inapropriadas são rejeitadas_. O objeto `images` representa as fotos de gatos enviadas.
 
-## Pré-requisitos
+# Pré-requisitos
 
 - Faça o registro em [https://thecatapi.com/signup](https://thecatapi.com/signup) para receber sua API key por email.
 - Informe a API key no header das chamadas através da variável `x-api-key`.
 - Utilize nas chamadas o path [https://api.thecatapi.com/v1](https://api.thecatapi.com/v1).
 
-## Endpoints
+# Endpoints
 
 >
 > Confira abaixo cada endpoint, suas formas de requisição e exemplos de _respostas_. 
 
-### POST
+## POST
 
 🐱 **`POST / Images / Upload`** `https://api.thecatapi.com/v1/images/upload`
 
@@ -40,7 +40,7 @@ Este endpoint **insere** uma nova imagem no sistema carregando um arquivo **vál
 | `sub_id` | ID para identificação interna. | `string` | Não |
 
 
-**Exemplo de requisição:** 
+### **Exemplo de requisição:** 
 
 ```
 curl --location --request POST 'https://api.thecatapi.com/v1/images/upload' \
@@ -52,7 +52,7 @@ curl --location --request POST 'https://api.thecatapi.com/v1/images/upload' \
 
 😻 A resposta de código `201 Created` indica que o registro da imagem foi criado com sucesso. Retorna um JSON incluindo o novo ID.
 
-**Exemplo de _response body_:**
+### **Exemplo de _response body_:**
 
 ``` json
 {
@@ -66,7 +66,7 @@ curl --location --request POST 'https://api.thecatapi.com/v1/images/upload' \
 }
 ```
 
-**Exemplos erros de respostas:**
+### **Exemplos erros de respostas:**
 
 -  `400 Bad request` Invalid file data. Check you are sending the formdata.append('file', ...} format'.
 
@@ -76,13 +76,13 @@ curl --location --request POST 'https://api.thecatapi.com/v1/images/upload' \
 
 -  `500 Internal Server Error` Internal Server Error. 
 
-### GET by ID
+## GET by ID
 
 🐱 **`GET /images/{image_id}`** `https://api.thecatapi.com/v1/images/{{image_id}}`
 
 Este endpoint **busca** a imagem correspondente ao **_path param_** `image_id`.
 
-**Exemplo de requisição:** 
+### **Exemplo de requisição:** 
 
 ```
 curl --location --request GET 'https://api.thecatapi.com/v1/images/6qmirugX0' \
@@ -93,7 +93,7 @@ curl --location --request GET 'https://api.thecatapi.com/v1/images/6qmirugX0' \
 
 😻 A resposta de código `200 OK` indica que a consulta foi executada com sucesso. Ela retorna um JSON com todas as informações da imagem.
 
-**Exemplo de _reponse body_:**
+### **Exemplo de _reponse body_:**
 
 ``` json
 
@@ -107,11 +107,11 @@ curl --location --request GET 'https://api.thecatapi.com/v1/images/6qmirugX0' \
 
 ```
 
-**Exemplo erro de resposta:**
+### **Exemplo erro de resposta:**
 
 -  `400 Bad request`Couldn't find an image matching the passed 'id' of xxxxx. Caso o `image_id` inserido estivesse incorreto. 
 
-### GET your uploaded images 
+## GET your uploaded images 
 
 🐱 **`GET /images`** `https://api.thecatapi.com/v1/images`
 
@@ -125,14 +125,14 @@ Filtre os resultados através dos parâmetros `query` abaixo:
 | `mime_types` | Os tipos de imagem a serem retornados: .gif, .jpg, ou .png. Retorna todos os tipos como padrão. | `string` delimitado por vírgulas. | Não |
 | `order` | A ordem de retorno: RANDOM, ASC ou DESC. O padrão é RANDOM. | `string` | Não  |
 
-**Exemplo de _requisição_ com parâmetros `limit` 25 e `order` ASC:**
+### **Exemplo de _requisição_ com parâmetros `limit` 25 e `order` ASC:**
 
 ``` 
 curl --location --request GET 'https://api.thecatapi.com/v1/images?limit=25&order=ASC' \
 --header 'x-api-key: live_g6EUZSGbkMsKSuQm1OyWDVeLrLSnoCMcps2f7BMcDq6Alt2Y9Z606aj1uF6sPF35'
 ```
 
-**Exemplo de _response body_:**
+### **Exemplo de _response body_:**
 
 ``` json
 [
@@ -162,13 +162,13 @@ curl --location --request GET 'https://api.thecatapi.com/v1/images?limit=25&orde
 
 ```
 
-### DELETE a specific image 
+## DELETE a specific image 
 
 🐱 **`DELETE /images/{image_id}`** `https://api.thecatapi.com/v1/images/{{image_id}}`
 
 Este endpoint **deleta** a imagem correspondente ao parâmetro `image_id` passado como parâmetro `path`.
 
-**Exemplo de _requisição_:**
+### **Exemplo de _requisição_:**
 
 ``` 
 curl --location --request DELETE 'https://api.thecatapi.com/v1/images/FBqMvFgx5' \
@@ -181,6 +181,6 @@ curl --location --request DELETE 'https://api.thecatapi.com/v1/images/FBqMvFgx5'
 😻 A resposta de código `204 No Content` indica que a exclusão foi executada com sucesso. Ela retorna um JSON vazio.
 
 
-**Exemplo erro de resposta:**
+### **Exemplo erro de resposta:**
 
 -  `400 Bad request` INVALID_DATA. Caso o `image_id` esteja inserido incorretamente.
