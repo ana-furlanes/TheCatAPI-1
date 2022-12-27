@@ -66,7 +66,7 @@ curl --location --request POST 'https://api.thecatapi.com/v1/images/upload' \
 }
 ```
 
-### **Exemplos erros de respostas:**
+### **Respostas de erro:**
 
 -  `400 Bad request` Invalid file data. Check you are sending the formdata.append('file', ...} format'.
 
@@ -107,7 +107,7 @@ curl --location --request GET 'https://api.thecatapi.com/v1/images/6qmirugX0' \
 
 ```
 
-### **Exemplo erro de resposta:**
+### **Respostas de erro:**
 
 -  `400 Bad request`Couldn't find an image matching the passed 'id' of xxxxx. Caso o `image_id` inserido estivesse incorreto. 
 
@@ -181,6 +181,6 @@ curl --location --request DELETE 'https://api.thecatapi.com/v1/images/FBqMvFgx5'
 😻 A resposta de código `204 No Content` indica que a exclusão foi executada com sucesso. Ela retorna um JSON vazio.
 
 
-### **Exemplo erro de resposta:**
+### **Resposta de erro:**
 
 -  `400 Bad request` INVALID_DATA. Caso o `image_id` esteja inserido incorretamente.
