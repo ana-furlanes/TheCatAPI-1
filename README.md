@@ -107,7 +107,7 @@ curl --location --request GET 'https://api.thecatapi.com/v1/images/6qmirugX0' \
 
 ```
 
-### **Respostas de erro:**
+### **Resposta de erro:**
 
 -  `400 Bad request`Couldn't find an image matching the passed 'id' of xxxxx. Caso o `image_id` inserido estivesse incorreto. 
 
